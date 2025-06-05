@@ -31,6 +31,8 @@ function App() {
   });
 
   const [formData, setFormData] = useState(initialFormData);
+  formData['color'] = '#000000'; // Default color value
+
   const [shown, setShown] = useState('');
   const [errors, setErrors] = useState({});
 
@@ -85,6 +87,7 @@ function App() {
               </label>
               {field.type === 'select' ? (
                 <select
+                  id={field.name}
                   name={field.name}
                   value={formData[field.name]}
                   onChange={handleChange}
